@@ -1,0 +1,5 @@
+*-packr.go
+*.log
+*.tmp
+.DS_Store
+coverage.txt

@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1beta3
+kind: Config
+build:
+  artifacts:
+    - image: cflynnus/golang-packr-demo
+      context: .
+      docker:
+        dockerfile: Dockerfile-develop
+      sync:
+        "**/*.html": "/go/src/golang-packr-demo"
+        "**/*.css": "/go/src/golang-packr-demo"
+deploy:
+  kubectl:
+    manifests:
+      - "k8s/local.yaml"
